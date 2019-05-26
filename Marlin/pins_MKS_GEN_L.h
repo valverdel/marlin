@@ -50,3 +50,28 @@
 #endif
 
 #include "pins_RAMPS.h"
+
+#if ENABLED(ANET_FULL_GRAPHICS_LCD)
+  #undef BTN_EN1
+  #undef BTN_EN2
+  #undef BTN_ENC
+  #undef BEEPER_PIN
+  #undef LCD_PINS_D4     
+  #undef LCD_PINS_ENABLE 
+  #undef LCD_PINS_RS     
+  #undef ST7920_DELAY_1
+  #undef ST7920_DELAY_2
+  #undef ST7920_DELAY_3
+  #define BTN_EN1            23
+  #define BTN_EN2            27
+  #define BTN_ENC            17
+  #define BEEPER_PIN         37
+  #define LCD_PINS_D4        35
+  #define LCD_PINS_ENABLE    25
+  #define LCD_PINS_RS        29
+  #define ST7920_DELAY_1 DELAY_NS(0)
+  #define ST7920_DELAY_2 DELAY_NS(63)
+  #define ST7920_DELAY_3 DELAY_NS(125)
+  #define STD_ENCODER_PULSES_PER_STEP 4
+  #define STD_ENCODER_STEPS_PER_MENU_ITEM 1
+#endif
